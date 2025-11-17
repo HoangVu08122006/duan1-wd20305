@@ -1,28 +1,28 @@
 <?php
-// Bật hiển thị lỗi để debug
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Require file Common
-require_once './commons/env.php'; // Khai báo biến môi trường
-require_once './commons/function.php'; // Hàm hỗ trợ
+// Common
+require_once './commons/env.php';
+require_once './commons/function.php';
 
-// Khởi tạo session nếu chưa có
+// Controller
+require_once './controllers/HomeController.php';
+
+// Session
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-match ($act) {
-    '/' => homeIndex(),
-    default => require './views/404.php',
-};
-
 // Route
 $act = $_GET['act'] ?? '/';
 
-// Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
-
-match ($act) {
-    
-};
-?>
+// Xử lý route
+switch ($act) {
+    case '/':
+        homeIndex();
+        break;
+    default:
+        require __DIR__ . '/views/404.php';
+        break;
+}

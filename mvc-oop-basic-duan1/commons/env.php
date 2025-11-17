@@ -5,7 +5,7 @@
 define('BASE_URL'       , 'http://localhost/duan1-nhom3-wd20305/mvc-oop-basic-duan1/');
 
 define('DB_HOST'    , 'localhost');
-define('DB_PORT'    , 3306);
+define('DB_PORT'    , 3304);
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME'    , '');  // Tên database

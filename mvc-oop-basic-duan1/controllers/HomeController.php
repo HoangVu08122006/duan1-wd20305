@@ -1,5 +1,8 @@
 <?php
 
 function homeIndex() {
-    require_once './views/home.php';
+    $homeUrl = 'index.php?act=/';
+
+    // Nếu muốn dùng trong view
+    require __DIR__ . '/../views/home.php';
 }
